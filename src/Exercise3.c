@@ -10,12 +10,30 @@ ______________________________________
 #include <stdlib.h>
 #include <math.h>
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
 	//testing variable, applying it to your algorithm for auto-evaluating
 	int testcase = atoi(argv[1]);
-	
+
 	//Your codes here
-	
-	
+	while (testcase % 2 == 0)
+	{
+		printf("%d * ", 2);
+		testcase = testcase / 2;
+	}
+
+	for (int i = 3; i <= sqrt(testcase); i = i + 2)
+	{
+		// While i divides n, print i and divide n
+		while (testcase % i == 0)
+		{
+			printf("%d ", i);
+			testcase = testcase / i;
+		}
+	}
+
+	if (testcase > 2)
+		printf("%d ", testcase);
+
 	return 0;
 }
