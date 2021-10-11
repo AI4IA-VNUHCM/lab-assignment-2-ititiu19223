@@ -16,24 +16,30 @@ int main(int argc, char *argv[])
 	int testcase = atoi(argv[1]);
 
 	//Your codes here
-	while (testcase % 2 == 0)
+	if (testcase < 2)
 	{
-		printf("%d * ", 2);
-		testcase = testcase / 2;
+		printf("Nhap n > 1");
 	}
-
-	for (int i = 3; i <= sqrt(testcase); i = i + 2)
+	else
 	{
-		// While i divides n, print i and divide n
-		while (testcase % i == 0)
+		int i = 2;
+		while (testcase > 1)
 		{
-			printf("%d ", i);
-			testcase = testcase / i;
+			if (testcase % i == 0)
+			{
+				printf("%d", i);
+				if (testcase != i)
+				{
+					printf(" * ");
+				}
+				testcase /= i;
+			}
+			else
+			{
+				i++;
+			}
 		}
 	}
-
-	if (testcase > 2)
-		printf("%d ", testcase);
 
 	return 0;
 }
