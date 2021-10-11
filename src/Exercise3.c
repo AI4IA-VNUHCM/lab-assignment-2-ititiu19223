@@ -16,11 +16,6 @@ int main(int argc, char *argv[])
 	int testcase = atoi(argv[1]);
 
 	//Your codes here
-	if (testcase < 2)
-	{
-		printf("Nhap n > 1");
-	}
-	else
 	{
 		int i = 2;
 		while (testcase > 1)
