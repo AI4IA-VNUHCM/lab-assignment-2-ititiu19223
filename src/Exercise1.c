@@ -14,12 +14,25 @@ ______________________________________
 #include <stdlib.h>
 #include <math.h>
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
 	//testing variable, applying it to your algorithm for auto-evaluating
 	float distance = atof(argv[1]);
 	int result;
 	//Your codes here
-	
+	result = 0;
+	if (distance <= 2)
+	{
+		result = distance * 7500;
+	}
+	if (distance <= 30 && distance > 2)
+	{
+		result = (distance - 2) * (2000 * 4) + 15000;
+	}
+	if (distance > 30)
+	{
+		result = 15000 + (30 - 2) * (2000 * 4) + (distance - 30) * 5000;
+	}
 	printf("%d", result);
 	return 0;
 }
